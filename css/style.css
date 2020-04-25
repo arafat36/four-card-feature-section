@@ -1,0 +1,155 @@
+/* Colors
+Primary
+    Red: hsl(0, 78%, 62%)
+    Cyan: hsl(180, 62%, 55%)
+    Orange: hsl(34, 97%, 64%)
+    Blue: hsl(212, 86%, 64%)
+Neutral
+    Very Dark Blue: hsl(234, 12%, 34%)
+    Grayish Blue: hsl(229, 6%, 66%)
+    Very Light Gray: hsl(0, 0%, 98%) 
+*/
+
+/* Layout
+Mobile: 375px
+Desktop: 1440px 
+*/
+
+/* 
+Solution example without flex nor grid.
+Vertically centered using padding.
+*/
+
+/* Reset */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%; /* -> 1rem = 10px */
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  font-size: 1.5rem;
+  background-color: hsl(0, 0%, 98%);
+  color: hsl(229, 6%, 66%);
+}
+
+/* HEADER content */
+.header {
+  height: 32vh;
+  position: relative;
+}
+
+.heading-wrapper {
+  width: 32%;
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.heading-primary {
+  color: hsl(234, 12%, 34%);
+  margin-bottom: 1.3rem;
+}
+
+.heading-primary--light {
+  display: block;
+  font-weight: 200;
+}
+
+.heading-primary--heavy {
+  display: block;
+  font-weight: 600;
+}
+
+/* .heading-paragraph {} */
+
+/*  || MAIN content */
+/* .main {} */
+
+.row {
+  width: 100%;
+  max-width: 110rem;
+  height: 100%;
+  margin: 0 auto;
+  clear: both;
+  display: table;
+}
+
+[class*="col--"] {
+  float: left;
+  height: 100%;
+  width: 33%;
+}
+
+.col--left,
+.col--right {
+  /* vertically center the cards */
+  padding: 12.5rem 0;
+}
+
+.card {
+  position: relative;
+  width: 93%;
+  background-color: hsl(0, 0%, 98%);
+  margin: 0 auto 2.5rem;
+  height: 23rem;
+  padding: 3rem;
+  border-radius: 0.4rem;
+  box-shadow: 0 1rem 2rem #0002;
+}
+
+/* Card modifiers */
+.card--supervisor {
+  border-top: 3px solid hsl(180, 62%, 55%);
+}
+.card--team-builder {
+  border-top: 3px solid hsl(0, 78%, 62%);
+}
+.card--karma {
+  border-top: 3px solid hsl(34, 97%, 64%);
+}
+.card--calculator {
+  border-top: 3px solid hsl(212, 86%, 64%);
+}
+
+.card__header {
+  font-size: 2rem;
+  color: hsl(234, 12%, 34%);
+  margin-bottom: 1rem;
+}
+
+.card__text {
+  font-size: 1.3rem;
+}
+
+.card__icon-box {
+  position: absolute;
+  right: 2rem;
+  bottom: 2rem;
+}
+
+.card__icon {
+  width: 87%;
+}
+
+/* || FOOTER content */
+.footer {
+  width: 25%;
+  margin: 0 auto;
+}
+
+.footer__attribution {
+  font-size: 1.1rem;
+  text-align: center;
+}
+
+.footer__link {
+  color: hsl(228, 45%, 44%);
+}
