@@ -15,11 +15,6 @@ Mobile: 375px
 Desktop: 1440px 
 */
 
-/* 
-Solution example without flex nor grid.
-Vertically centered using padding.
-*/
-
 /* Reset */
 * {
   padding: 0;
@@ -34,18 +29,19 @@ html {
 body {
   font-family: "Poppins", sans-serif;
   font-size: 1.5rem;
-  background-color: hsl(0, 0%, 98%);
-  color: hsl(229, 6%, 66%);
+  background-color: #fafafa;
+  color: #a3a5ae;
+  padding: 0 1.7rem;
 }
 
 /* HEADER content */
 .header {
-  height: 32vh;
+  height: 27rem;
   position: relative;
 }
 
 .heading-wrapper {
-  width: 32%;
+  width: 50rem;
   text-align: center;
   position: absolute;
   top: 50%;
@@ -54,7 +50,8 @@ body {
 }
 
 .heading-primary {
-  color: hsl(234, 12%, 34%);
+  font-size: 3.7rem;
+  color: #4c4e61;
   margin-bottom: 1.3rem;
 }
 
@@ -68,55 +65,36 @@ body {
   font-weight: 600;
 }
 
-/* .heading-paragraph {} */
+.heading-paragraph {
+  font-size: 1.5rem;
+}
 
 /*  || MAIN content */
 /* .main {} */
 
 .row {
-  width: 100%;
   max-width: 110rem;
-  height: 100%;
   margin: 0 auto;
-  clear: both;
-  display: table;
+  display: flex;
 }
 
-[class*="col--"] {
-  float: left;
-  height: 100%;
-  width: 33%;
+.col {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  padding: 0 1.5rem;
 }
 
-.col--left,
-.col--right {
-  /* vertically center the cards */
-  padding: 12.5rem 0;
-}
-
+/* CARD */
 .card {
   position: relative;
-  width: 93%;
-  background-color: hsl(0, 0%, 98%);
-  margin: 0 auto 2.5rem;
-  height: 23rem;
+  background-color: #fafafa;
+  margin: 1.5rem auto;
+  height: 24rem;
   padding: 3rem;
   border-radius: 0.4rem;
-  box-shadow: 0 1rem 2rem #0002;
-}
-
-/* Card modifiers */
-.card--supervisor {
-  border-top: 3px solid hsl(180, 62%, 55%);
-}
-.card--team-builder {
-  border-top: 3px solid hsl(0, 78%, 62%);
-}
-.card--karma {
-  border-top: 3px solid hsl(34, 97%, 64%);
-}
-.card--calculator {
-  border-top: 3px solid hsl(212, 86%, 64%);
+  box-shadow: 0 1rem 2rem #4c4e6133;
 }
 
 .card__header {
@@ -131,25 +109,126 @@ body {
 
 .card__icon-box {
   position: absolute;
-  right: 2rem;
-  bottom: 2rem;
+  right: 2.5rem;
+  bottom: 2.5rem;
+  height: 6rem;
+  width: 6rem;
 }
 
 .card__icon {
-  width: 87%;
+  width: 100%;
+}
+
+/* CARD modifiers */
+.card--supervisor {
+  border-top: 3px solid hsl(180, 62%, 55%);
+}
+.card--team-builder {
+  border-top: 3px solid hsl(0, 78%, 62%);
+}
+.card--karma {
+  border-top: 3px solid hsl(34, 97%, 64%);
+}
+.card--calculator {
+  border-top: 3px solid hsl(212, 86%, 64%);
 }
 
 /* || FOOTER content */
 .footer {
-  width: 25%;
-  margin: 0 auto;
+  margin-top: 2rem;
 }
 
 .footer__attribution {
+  width: 100%;
+  max-width: 50rem;
+  margin: 0 auto;
   font-size: 1.1rem;
   text-align: center;
+  padding: 2rem;
 }
 
 .footer__link {
   color: hsl(228, 45%, 44%);
+}
+
+/* || MEDIA  */
+@media only screen and (max-width: 62.5em) {
+  html {
+    font-size: 56.25%; /* 1rem = 9px */
+  } 
+
+  .heading-primary {
+    font-size: 3rem; 
+  }
+}
+
+@media only screen and (max-width: 52.5em) { 
+  .heading-wrapper {
+    max-width: 50rem;
+    width: 100%;
+    text-align: center;
+  }
+
+  .heading-paragraph {
+    font-size: 1.8rem;
+  }
+
+  .card {
+    margin: 3rem auto;
+    height: 30rem;
+    padding: 4rem;
+  }
+
+  .card__header {
+    font-size: 3rem;
+  }
+
+  .card__text {
+    font-size: 2rem;
+  }
+
+  .card__icon-box {
+    right: 3rem;
+    bottom: 3rem;
+    height: 7rem;
+    width: 7rem;
+  }
+
+  .row {
+      flex-direction: column;
+      max-width: 48rem;
+  }
+}
+
+@media only screen and (max-width: 26.875em) {
+  
+  .card {
+    margin: 1.5rem auto;
+    height: 25rem;
+    padding: 3rem;
+  }
+
+  .card__text {
+    font-size: 1.5rem;
+  }
+
+  .card__header {
+    font-size: 2.4rem;
+  }
+
+  .card__icon-box {
+    height: 6rem;
+    width: 6rem;
+  }
+}
+
+@media only screen and (max-width: 20em) {
+  .heading-primary {
+    font-size: 2.5rem;
+  }
+  
+  .heading-paragraph {
+    font-size: 1.5rem;
+  }
+
 }
